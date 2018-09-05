@@ -24,7 +24,31 @@ get_header();
 				</article>
 			<?php endwhile; ?>
 
+<?php $category_main = get_the_category();
+$cat_slug = $category_main[0]->slug; ?>
+			<?php $args1 = array(
+			'post_type' => 'staff',
+			'posts_per_page' => 1,
+			'category_name' => $cat_slug,
+			'orderby' => 'rand',
 
+			);
+
+			$loop = new WP_Query($args1);
+			if($loop->have_posts()):
+			while($loop->have_posts()) {
+				$loop->the_post();
+
+				the_post_thumbnail('thumbnail');
+				the_title();
+				the_field('staff_title');
+				the_field('staff_position');
+			}
+
+			endif;
+		wp_reset_postdata();
+
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
