@@ -36,3 +36,6 @@ endwhile;
 		</form>
 	</main>
 </div>
+
+<?php
+get_footer();

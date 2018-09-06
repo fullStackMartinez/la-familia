@@ -39,17 +39,27 @@ get_header();
 		if($loop->have_posts()):
 			while($loop->have_posts()) {
 				$loop->the_post();
+				if(is_page(array('Medical Services', 'Dental Services', 'Health Care For The Homeless', 'Health Education', 'Residency Training', 'Pharmacy', 'Nutritional Services'))) {
+					if (has_post_thumbnail()) {
+						the_post_thumbnail('thumbnail');
+						the_title();
+						the_field('staff_title');
+						the_field('staff_position');
+				?>
+				<a class="link" href="<?php the_permalink(); ?>">Full Profile</a>
+				<a class="link" href="<?php echo get_post_type_archive_link('staff'); ?>">All Staff</a>
+		<?php
+}
+		}
 
-				the_post_thumbnail('thumbnail');
-				the_title();
-				the_field('staff_title');
-				the_field('staff_position');
+
 			}
-
 		endif;
 		wp_reset_postdata();
 
 		?>
+
+
 
 	</main><!-- #main -->
 </div><!-- #primary -->

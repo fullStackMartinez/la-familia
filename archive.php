@@ -40,7 +40,7 @@ get_header();
 					$loop->the_post();
 ?>
 					<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('thumbnail') ?>;</a>
+				<?php the_post_thumbnail('thumbnail') ?></a>
 					<?php
 			the_title();
 			the_field('staff_title');
