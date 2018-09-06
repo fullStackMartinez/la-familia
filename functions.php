@@ -126,9 +126,16 @@ function la_familia_scripts() {
 
 	wp_enqueue_script( 'la-familia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+
+
+	wp_enqueue_script( 'la-familia-google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDEXGioqp6BFCyLI9NH755iNc5zp2MBmI4', array(), '3', true );
+
+	wp_enqueue_script( 'la-familia-google-map-init', get_template_directory_uri() . '/js/google-map.js', array('google-map', 'jquery'), '0.1', true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
+
 }
 add_action( 'wp_enqueue_scripts', 'la_familia_scripts' );
 
@@ -164,3 +171,15 @@ function add_taxonomies_to_pages() {
 	register_taxonomy_for_object_type( 'category', 'page' );
 }
 add_action( 'init', 'add_taxonomies_to_pages' );
+
+function my_acf_init() {
+
+	acf_update_setting('google_api_key', 'AIzaSyDEXGioqp6BFCyLI9NH755iNc5zp2MBmI4');
+}
+
+add_action('acf/init', 'my_acf_init');
+
+function register_my_menu() {
+	register_nav_menu('additional-menu',__( 'Additional Menu' ));
+}
+add_action( 'init', 'register_my_menu' );

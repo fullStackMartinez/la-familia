@@ -51,7 +51,9 @@
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
 			) );
-			?>
+?>
+			<?php wp_nav_menu( array( 'theme_location' => 'additional-menu', 'container_class' => 'new_menu_class' ) ); ?>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

@@ -1,5 +1,7 @@
 <?php
 /**
+ *
+ * template name: archive
  * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -13,7 +15,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
@@ -23,31 +24,39 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+			$category_main = get_the_category();
+		$cat_slug = $category_main[0]->slug; ?>
+			<?php $args1 = array(
+				'post_type' => 'staff',
+				'posts_per_page' => -1,
+				'category_name' => $cat_slug,
 
-			endwhile;
+			);
 
-			the_posts_navigation();
+			$loop = new WP_Query($args1);
+			if($loop->have_posts()):
+				while($loop->have_posts()) {
+					$loop->the_post();
+?>
+					<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail('thumbnail') ?>;</a>
+					<?php
+			the_title();
+			the_field('staff_title');
+			the_field('staff_position');
+			the_field('staff_quote');
+			the_content();
+				}
 
-		else :
+			endif;
+			wp_reset_postdata();
 
-			get_template_part( 'template-parts/content', 'none' );
+			?>
 
-		endif;
-		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
