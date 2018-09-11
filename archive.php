@@ -15,6 +15,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<!-- HEADER WITH PAGE TITLE AND DESCRIPTION-->
 
 			<header class="page-header">
 				<?php
@@ -22,9 +23,8 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+<!-- START OF LOOP THAT WILL DISPLAY STAFF TYPE BASED ON THEIR CATEGORY AND THE CATEGORY OF THE PAGE -->
 			<?php
-
 			$category_main = get_the_category();
 		$cat_slug = $category_main[0]->slug; ?>
 			<?php $args1 = array(
@@ -53,6 +53,8 @@ get_header();
 			wp_reset_postdata();
 
 			?>
+
+			<!-- END OF LOOP -->
 
 
 		</main><!-- #main -->

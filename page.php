@@ -14,6 +14,8 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 
+		<!-- MAIN CONTENT DISPLAYING -->
+
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -24,6 +26,8 @@ get_header();
 
 			</article>
 		<?php endwhile; ?>
+
+		<!-- RANDOM STAFF MEMEBER WILL DISPLAY THAT SHARES THE SAME CATEGORY AS THE PAGE WE ARE ON -->
 
 		<?php $category_main = get_the_category();
 		$cat_slug = $category_main[0]->slug; ?>
@@ -51,14 +55,53 @@ get_header();
 		<?php
 }
 		}
-
-
 			}
 		endif;
 		wp_reset_postdata();
 
 		?>
 
+		<!-- START OF ACF FOR APPOINTMENT PHONE NUMBERS -->
+
+		<?php
+		if( have_rows('appointment_phone_number') ):
+
+		while( have_rows('appointment_phone_number') ) : the_row();
+
+			?>
+
+			<p><?php the_sub_field("appointment_type_with_location_name"); ?><?php the_sub_field("phone_number"); ?></p>
+
+
+			<?php
+
+
+		endwhile;
+		endif;
+		?>
+
+		<!-- END OF LOOP-->
+
+		<!-- START OF ACF FOR CLINIC PHONE NUMBERS -->
+
+		<?php
+		if( have_rows('clinic_contact_phone_numbers') ):
+
+			while( have_rows('clinic_contact_phone_numbers') ) : the_row();
+
+				?>
+
+				<p><?php the_sub_field("clinic_name"); ?><?php the_sub_field("clinic_phone_number"); ?></p>
+
+
+			<?php
+
+
+			endwhile;
+		endif;
+		?>
+
+		<!-- END OF LOOP-->
 
 
 	</main><!-- #main -->

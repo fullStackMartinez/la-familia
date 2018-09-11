@@ -5,6 +5,8 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 
+		<!-- START OF ARCHIVE LOOP FOR CPT STAFF -->
+
 		<?php
 		$args = array(
 		'post_type' => 'staff',

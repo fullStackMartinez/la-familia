@@ -45,7 +45,41 @@
 
 		<!--     END OF NEWS LOOP    -->
 
+		<section class="slider">
 
+			<?php if( have_rows('add_page') ): ?>
+
+				<div id="slider" class="flexslider">
+
+					<ul class="slides">
+
+						<?php while ( have_rows('add_page') ) : the_row(); ?>
+
+							<li>
+
+								<?php $post_object = get_sub_field('page_to_show_on_front_page'); ?>
+
+								<?php if( $post_object ): ?>
+
+									<?php $post = $post_object; setup_postdata( $post ); ?>
+
+									<a href="<?php the_permalink(); ?>"><img src="<?php the_field('featured_image'); ?>" alt="<?php the_title(); ?>" /></a>
+
+									<?php wp_reset_postdata(); ?>
+
+								<?php endif; ?>
+
+							</li>
+
+						<?php endwhile; ?>
+
+					</ul>
+
+				</div>
+
+			<?php endif; ?>
+
+		</section>
 
 
 
