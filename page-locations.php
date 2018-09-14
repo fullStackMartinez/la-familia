@@ -49,24 +49,24 @@ get_header();
 			</div>
 		<?php endif; ?>
 
-<?php if(have_rows('is_there_an_outreach_location')): ?>
+		<?php if(have_rows('is_there_an_outreach_location')): ?>
 
-	<?php while(have_rows('is_there_an_outreach_location')) : the_row();
-		$outreachName = get_sub_field('outreach_name');
-		$outreachAddress = get_sub_field('outreach_address');
-		$outreachOpen = get_sub_field('outreach_days_open');
-		$outreachHours = get_sub_field('outreach_hours_open');
-		?>
-	<?php if(!empty($outreachName)) {
-			echo '<h4>' . $outreachName . '</h4>';
-			echo '<h6>' . $outreachAddress . '</h6>';
-			echo '<p>' . $outreachOpen . '</p>';
-			echo '<p>' . $outreachHours . '</p>';
-		}
-	 endwhile; ?>
+			<?php while(have_rows('is_there_an_outreach_location')) : the_row();
+				$outreachName = get_sub_field('outreach_name');
+				$outreachAddress = get_sub_field('outreach_address');
+				$outreachOpen = get_sub_field('outreach_days_open');
+				$outreachHours = get_sub_field('outreach_hours_open');
+				?>
+				<?php if(!empty($outreachName)) {
+					echo '<h4>' . $outreachName . '</h4>';
+					echo '<h6>' . $outreachAddress . '</h6>';
+					echo '<p>' . $outreachOpen . '</p>';
+					echo '<p>' . $outreachHours . '</p>';
+				}
+			endwhile; ?>
 
 
-<?php endif; ?>
+		<?php endif; ?>
 
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEXGioqp6BFCyLI9NH755iNc5zp2MBmI4"></script>

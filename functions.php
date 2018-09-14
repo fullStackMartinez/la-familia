@@ -184,3 +184,26 @@ function register_my_menu() {
 	register_nav_menu('additional-menu',__( 'Additional Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
+
+add_action('acf/init', 'my_acf_init');
+
+function register_footer_menu() {
+	register_nav_menu('footer-menu-1',__( 'Footer Menu 1' ));
+}
+add_action( 'init', 'register_footer_menu' );
+
+add_action('acf/init', 'my_acf_init');
+
+function register_footer_menu_2() {
+	register_nav_menu('footer-menu-2',__( 'Footer Menu 2' ));
+}
+add_action( 'init', 'register_footer_menu_2' );
+
+add_action('acf/init', 'my_acf_init');
+
+function register_footer_menu_3() {
+	register_nav_menu('footer-menu-3',__( 'Footer Menu 3' ));
+}
+add_action( 'init', 'register_footer_menu_3' );
+add_action('acf/init', 'my_acf_init');
+
