@@ -23,38 +23,39 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-<!-- START OF LOOP THAT WILL DISPLAY STAFF TYPE BASED ON THEIR CATEGORY AND THE CATEGORY OF THE PAGE -->
-			<?php
-			$category_main = get_the_category();
-		$cat_slug = $category_main[0]->slug; ?>
-			<?php $args1 = array(
-				'post_type' => 'staff',
-				'posts_per_page' => -1,
-				'category_name' => $cat_slug,
 
-			);
-
-			$loop = new WP_Query($args1);
-			if($loop->have_posts()):
-				while($loop->have_posts()) {
-					$loop->the_post();
-?>
-					<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('thumbnail') ?></a>
+			<div class="articles">
+				<ul class="articles-list">
 					<?php
-			the_title();
-			the_field('staff_title');
-			the_field('staff_position');
-			the_field('staff_quote');
-			the_content();
-				}
 
-			endif;
-			wp_reset_postdata();
+					$myposts = get_posts( array('orderby' => 'date', 'posts_per_page' => 4) );
 
-			?>
+					if(!empty($myposts)) {
+						foreach($myposts as $post) : setup_postdata($post); ?>
+							<li>
+								<div class="article-summary">
+									<?php
+									if(has_post_thumbnail()) {
+										the_post_thumbnail('article');
+									}
+									?>
+								</div>
+								<div class="article-summary2">
+									<a href="<?php the_permalink(); ?>">
+										<div class="article-title"><?php the_title(); ?></div>
+									</a>
+									<?php the_excerpt(50); ?>
+									<p><a class="link2" href="<?php the_permalink(); ?>">More &#62;</a></p>
 
-			<!-- END OF LOOP -->
+								</div>
+
+							</li>
+						<?php endforeach;
+					}
+					wp_reset_postdata();?>
+				</ul>
+			</div>
+
 
 
 		</main><!-- #main -->

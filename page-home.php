@@ -116,10 +116,10 @@
 
 			<!--    End of ACF loop    -->
 
-			<!--     START OF PARTNER LOOP  -->
+			<!--     START OF SPONSOR LOOP/SLIDER -->
 
 
-			<!--     END OF PARTNER LOOP  -->
+			<!--     END OF SPONSOR LOOP/SLIDER  -->
 
 
 		</main>
