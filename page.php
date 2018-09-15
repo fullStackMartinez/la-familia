@@ -62,6 +62,26 @@ get_header();
 
 		?>
 
+		<?php
+		if(is_page('Newsletter')) {?>
+		<form action="action_page.php" style="border:1px solid #ccc">
+			<div class="container">
+				<h1>Sign Up</h1>
+				<p>Please fill in this form to sign up for out newsletter</p>
+				<hr>
+
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Enter Email" name="email" required>
+
+				<div class="clearfix">
+					<button type="submit" class="signupbtn">Sign Up</button>
+				</div>
+			</div>
+		</form>
+		<?php
+
+		}
+		?>
 		<!-- START OF ACF FOR APPOINTMENT PHONE NUMBERS -->
 
 		<?php

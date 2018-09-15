@@ -21,10 +21,12 @@ get_header();
 				$locationPhone = get_sub_field('location_main_phone_number');
 				$locationAddPhone = get_sub_field('additional_phone_number');
 				$locationFax = get_sub_field('location_fax_number');
-				$locationHours = get_sub_field('location_hours');
+				$openingHours = get_sub_field('opening_hours');
+				$closingTime = get_sub_field('closing_time');
 				$locationDays = get_sub_field('location_days_open');
 				$locationClose = get_sub_field('location_closed_message');
-				$pharmacyHours = get_sub_field('pharmacy_hours');
+				$pharmacyHours = get_sub_field('pharmacy_opening_hours');
+				$pharmacyClose = get_sub_field('pharmacy_closing_time');
 				$pharmacyDays = get_sub_field('pharmacy_days_open');
 
 				?>
@@ -35,10 +37,10 @@ get_header();
 				<p><?php echo $locationPhone; ?></p>
 				<p><?php echo $locationAddPhone; ?></p>
 				<p><?php echo $locationFax; ?></p>
-				<p><?php echo $locationHours; ?></p>
+				<p><?php echo $openingHours; ?>&ndash;<?php echo $closingTime; ?></p>
 				<p><?php echo $locationDays; ?></p>
 				<p><?php echo $locationClose; ?></p>
-				<p><?php echo $pharmacyHours; ?></p>
+				<p><?php echo $pharmacyHours; ?>&ndash;<?php echo $pharmacyClose; ?></p>
 				<p><?php echo $pharmacyDays; ?></p>
 
 				<div class="acf-map">
@@ -55,14 +57,18 @@ get_header();
 				$outreachName = get_sub_field('outreach_name');
 				$outreachAddress = get_sub_field('outreach_address');
 				$outreachOpen = get_sub_field('outreach_days_open');
-				$outreachHours = get_sub_field('outreach_hours_open');
+				$outreachHours = get_sub_field('outreach_opening_hours');
+				$outreachClose = get_sub_field('outreach_closing_time')
 				?>
-				<?php if(!empty($outreachName)) {
-					echo '<h4>' . $outreachName . '</h4>';
-					echo '<h6>' . $outreachAddress . '</h6>';
-					echo '<p>' . $outreachOpen . '</p>';
-					echo '<p>' . $outreachHours . '</p>';
-				}
+				<?php if(!empty($outreachName)) { ?>
+					<p><?php echo $outreachName; ?></p>
+		<p><?php echo $outreachAddress; ?></p>
+		<p><?php echo $outreachOpen; ?></p>
+		<p><?php echo $outreachHours; ?>&ndash;<?php echo $outreachClose; ?></p>
+
+<?php
+
+		}
 			endwhile; ?>
 
 
