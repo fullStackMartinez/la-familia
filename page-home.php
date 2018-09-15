@@ -39,13 +39,13 @@
 
 			<!--    Start of the ACF loop on selected Pages/Post  -->
 
-			<section class="slider">
+			<section class="home-loop">
 
 				<?php if(have_rows('add_page')): ?>
 
-					<div id="slider" class="flexslider">
+					<div class="wrapper">
 
-						<ul class="slides">
+						<ul class="list">
 
 							<?php while(have_rows('add_page')) : the_row(); ?>
 
@@ -57,9 +57,18 @@
 
 										<?php $post = $post_object;
 										setup_postdata($post); ?>
+									<div class="field-loop">
+										<div class="loop-image">
+										<a href="<?php the_permalink(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+										</div>
+										<div class="loop-content">
+											<p><?php the_title(); ?></p>
+											<p><?php the_content(); ?></p>
 
-										<a href="<?php the_permalink(); ?>"><img src="<?php the_field('featured_image'); ?>"
-																							  alt="<?php the_title(); ?>"/></a>
+										</div>
+									</div>
 
 										<?php wp_reset_postdata(); ?>
 
