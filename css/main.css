@@ -18,6 +18,7 @@ img {
 	height: 400px;
 	border: #ccc solid 1px;
 	margin: 20px 0;
+	flex: 1;
 }
 
 /* fixes potential theme css conflict */
@@ -56,4 +57,16 @@ ul {
 
 .loop-content {
 	flex: 2;
+}
+
+.locations {
+	display: flex;
+}
+
+.location-image {
+	flex:1;
+}
+
+.location-content {
+	flex: 1;
 }

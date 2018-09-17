@@ -30,8 +30,11 @@ get_header();
 				$pharmacyDays = get_sub_field('pharmacy_days_open');
 
 				?>
-
+			<div class="locations">
+<div class="location-image">
 				<img src="<?php echo $locationImage; ?>">
+</div>
+	<div class="location-content">
 				<h3><?php echo $locationName; ?></h3>
 				<h5><?php echo $locationAddress; ?></h5>
 				<p><?php echo $locationPhone; ?></p>
@@ -42,6 +45,7 @@ get_header();
 				<p><?php echo $locationClose; ?></p>
 				<p><?php echo $pharmacyHours; ?>&ndash;<?php echo $pharmacyClose; ?></p>
 				<p><?php echo $pharmacyDays; ?></p>
+	</div>
 
 				<div class="acf-map">
 				<div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
@@ -49,8 +53,9 @@ get_header();
 				</div>
 			<?php endwhile; ?>
 			</div>
-		<?php endif; ?>
 
+		<?php endif; ?>
+			</div>
 		<?php if(have_rows('is_there_an_outreach_location')): ?>
 
 			<?php while(have_rows('is_there_an_outreach_location')) : the_row();
