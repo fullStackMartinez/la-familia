@@ -51,7 +51,7 @@ get_header();
 								the_field('staff_title');
 								the_field('staff_position');
 								the_field('staff_quote');
-								the_content();
+								echo '<p>' . wp_trim_words(get_the_content(), 50) . '</p>';
 
 								?>
 							</div>

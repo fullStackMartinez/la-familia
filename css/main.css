@@ -15,7 +15,7 @@ img {
 
 .acf-map {
 	width: 100%;
-	height: 400px;
+	height: 250px;
 	border: #ccc solid 1px;
 	margin: 20px 0;
 	flex: 1;
@@ -61,6 +61,8 @@ ul {
 
 .locations {
 	display: flex;
+	margin: 20px 0;
+	border-bottom: 2px solid grey;
 }
 
 .location-image {
@@ -69,4 +71,9 @@ ul {
 
 .location-content {
 	flex: 1;
+}
+
+.loop-content .quote {
+	font-size: 13px;
+	font-weight: bold;
 }

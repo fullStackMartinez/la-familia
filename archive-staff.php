@@ -32,8 +32,8 @@ get_header();
 					the_title();
 					the_field('staff_title');
 					the_field('staff_position');
-					the_field('staff_quote');
-					the_content();
+					echo '<p class="quote">' . get_field('staff_quote') . '</p>';
+					echo '<p>' . wp_trim_words(get_the_content(), 20) . '</p>';
 					?>
 				</div>
 			</div>

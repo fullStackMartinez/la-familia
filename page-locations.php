@@ -11,11 +11,12 @@ get_header();
 
 
 		<?php if(have_rows('location')): ?>
-
+		<ul class="slides">
 			<?php while(have_rows('location')) : the_row();
-
 				$map = get_sub_field('google_map');
 				$locationImage = get_sub_field('location_image');
+				$size = 'thumbnail';
+				$article = $locationImage['sizes'][$size];
 				$locationName = get_sub_field('location_name');
 				$locationAddress = get_sub_field('location_address');
 				$locationPhone = get_sub_field('location_main_phone_number');
@@ -23,16 +24,17 @@ get_header();
 				$locationFax = get_sub_field('location_fax_number');
 				$openingHours = get_sub_field('opening_hours');
 				$closingTime = get_sub_field('closing_time');
-				$locationDays = get_sub_field('location_days_open');
+				$locationDays = get_sub_field('location_day_open');
+				$locationDayClose = get_sub_field('closing_day');
 				$locationClose = get_sub_field('location_closed_message');
 				$pharmacyHours = get_sub_field('pharmacy_opening_hours');
 				$pharmacyClose = get_sub_field('pharmacy_closing_time');
 				$pharmacyDays = get_sub_field('pharmacy_days_open');
-
 				?>
+			<li class="slide">
 			<div class="locations">
 <div class="location-image">
-				<img src="<?php echo $locationImage; ?>">
+				<img src="<?php echo $article; ?>">
 </div>
 	<div class="location-content">
 				<h3><?php echo $locationName; ?></h3>
@@ -40,19 +42,28 @@ get_header();
 				<p><?php echo $locationPhone; ?></p>
 				<p><?php echo $locationAddPhone; ?></p>
 				<p><?php echo $locationFax; ?></p>
-				<p><?php echo $openingHours; ?>&ndash;<?php echo $closingTime; ?></p>
-				<p><?php echo $locationDays; ?></p>
+		<?php
+		if(!empty($openingHours)) {
+			?><p><?php echo $openingHours; ?>&ndash;<?php echo $closingTime; ?></p><?php
+		}?>
+			<p><?php echo $locationDays; ?>&ndash;<?php echo $locationDayClose; ?></p>
 				<p><?php echo $locationClose; ?></p>
-				<p><?php echo $pharmacyHours; ?>&ndash;<?php echo $pharmacyClose; ?></p>
+		<?php
+		if(!empty($pharmacyHours)) {?>
+			<p><?php echo $pharmacyHours; ?>&ndash;<?php echo $pharmacyClose; ?></p><?php
+		}?>
 				<p><?php echo $pharmacyDays; ?></p>
 	</div>
-
-				<div class="acf-map">
-				<div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
-					<p class="address"><?php echo $map['address']; ?></p>
-				</div>
+<div class="acf-map">
+	<div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
+		<p class="address"><?php echo $map['address']; ?></p>
+	</div>
+</div>
+					</div>
+				</li>
 			<?php endwhile; ?>
-			</div>
+
+</ul>
 
 		<?php endif; ?>
 			</div>

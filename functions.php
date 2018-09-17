@@ -140,6 +140,9 @@ function la_familia_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'la_familia_scripts' );
 
+add_image_size( 'article', 260, 168, true);
+
+
 /**
  * Implement the Custom Header feature.
  */
