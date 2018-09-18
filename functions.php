@@ -121,7 +121,9 @@ add_action( 'widgets_init', 'la_familia_widgets_init' );
  */
 function la_familia_scripts() {
 	wp_enqueue_style( 'la-familia-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'la-famlia-stylesheet', get_template_directory_uri() . '/css/home-slider.css' );
 
+	wp_enqueue_script( 'la-familia-home-slideshow', get_template_directory_uri() . '/js/home-slideshow.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'la-familia-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

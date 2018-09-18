@@ -1,0 +1,134 @@
+/*
+    new montezuma
+    new-montezuma
+    style_m1.css
+    since july 2018
+    loads after the unchanged style.css of the underscores.me theme
+*/
+/* SCSS VARIABLES */
+/* SITEWIDE STYLES */
+.home-slideshow {
+	position: relative;
+	display: none;
+	width: 100%;
+	padding-bottom: 49.6%;
+	margin: 0 auto;
+	z-index: 1; }
+.home-slideshow:hover .nav-boxes {
+	display: block !important; }
+.home-slideshow:hover .slideshow-prev {
+	display: block !important; }
+.home-slideshow:hover .slideshow-next {
+	display: block !important; }
+.home-slideshow .nav-boxes {
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	padding-right: 65px;
+	text-align: right;
+	opacity: .8; }
+.home-slideshow .nav-boxes a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin-left: 3px;
+	border: 1px solid #DED9D3; }
+.home-slideshow .slideshow-logo {
+	position: absolute;
+	width: 107px;
+	height: 126px;
+	background-image: url("../images/masonic-logo.png");
+	background-size: 107px 126px;
+	bottom: 80px;
+	right: 62px;
+	z-index: 10; }
+.home-slideshow ul {
+	position: relative;
+	width: 100%; }
+.home-slideshow ul li {
+	position: absolute;
+	display: none;
+	width: 100%; }
+.home-slideshow ul li a {
+	width: 100%; }
+.home-slideshow ul li a img {
+	width: 100%;
+	max-width: none; }
+
+@media only screen and (max-width: 900px) {
+
+	.home-slideshow .nav-boxes {
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		padding-right: 60px;
+		text-align: right;
+		opacity: .8;
+	}
+
+	.home-slideshow .slideshow-logo {
+		position: absolute;
+		width: 67px;
+		height: 86px;
+		background-image: url(../images/masonic-logo.png);
+		background-size: 67px 86px;
+		bottom: 60px;
+		right: 62px;
+		z-index: 10;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+
+	.home-slideshow .slideshow-logo {
+		position: absolute;
+		width: 47px;
+		height: 66px;
+		background-image: url(../images/masonic-logo.png);
+		background-size: 47px 66px;
+		bottom: 40px;
+		right: 32px;
+		z-index: 10;
+	}
+
+	.home-slideshow .nav-boxes {
+		position: absolute;
+		bottom: 5px;
+		width: 100%;
+		padding-right: 20px;
+		text-align: right;
+		opacity: .8;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.home-sideshow .nav-boxes {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		padding-right: 15px;
+		text-align: right;
+		opacity: .8;
+	}
+
+	.home-slideshow .slideshow-logo {
+		position:absolute;
+		width: 40px;
+		height: 56px;
+		background-image: url(../images/masonic-logo.png);
+		background-size: 40px 56px;
+		bottom: 30px;
+		right: 20px;
+		z-index: 10;
+	}
+
+	.home-slideshow .nav-boxes a {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		margin-left: 3px;
+		border: 1px solid #DED9D3;
+	}
+}

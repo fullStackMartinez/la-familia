@@ -33,7 +33,7 @@ get_header();
 					the_field('staff_title');
 					the_field('staff_position');
 					echo '<p class="quote">' . get_field('staff_quote') . '</p>';
-					echo '<p>' . wp_trim_words(get_the_content(), 20) . '</p>';
+					echo '<p>' . wp_trim_words(get_the_content(), 30) . '</p>';
 					?>
 				</div>
 			</div>

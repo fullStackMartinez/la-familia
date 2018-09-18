@@ -7,6 +7,26 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div class="home-slideshow">
+				<ul>
+					<?php $images = get_field('slideshow');
+					while ( have_rows('slideshow') ) : the_row(); ?>
+						<li>
+							<?php $image = get_sub_field('image'); ?>
+							<a class="link" href="<?php the_sub_field('link'); ?>">
+								<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+						</li>
+					<?php endwhile; ?>
+				</ul>
+				<div class="nav-boxes">
+					<?php for ($i=0; $i < count($images); $i++) {  ?>
+						<a href="javascript:void"></a>
+					<?php } ?>
+				</div>
+				<div class="slideshow-logo"></div>
+			</div>
+
 			<!--     Start of Additional Info/Content Section  -->
 
 			<section id="content-section">
@@ -65,7 +85,7 @@
 										</div>
 										<div class="loop-content">
 											<p><?php the_title(); ?></p>
-											<p><?php the_content(); ?></p>
+											<?php echo '<p>' . wp_trim_words(get_the_content(), 30) . '</p>';?>
 
 										</div>
 									</div>

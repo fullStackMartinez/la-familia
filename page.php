@@ -14,6 +14,10 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 
+		<div class="page-header">
+			<?php the_post_thumbnail('fuller'); ?>
+		</div>
+
 		<!-- MAIN CONTENT DISPLAYING -->
 
 		<?php while ( have_posts() ) : the_post(); ?>
