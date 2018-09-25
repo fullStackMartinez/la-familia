@@ -86,6 +86,22 @@ get_header();
 
 		}
 		?>
+
+		<?php
+		if(is_page('Opportunities')) {?>
+			<!-- BEGIN HRM DIRECT DYNAMIC CODE -->
+			<link rel="stylesheet" type="text/css" href="//reports.hrmdirect.com/employment/default/sm/settings/dynamic-embed/dynamic-iframe-embed-css.php" />
+			<script type="text/javascript" src="//reports.hrmdirect.com/employment/default/sm/settings/dynamic-embed/dynamic-iframe-embed-js.php"></script>
+			<div id="iframeHeightDiv" name="HRM Direct Career Site iFrame Container" align="center">
+				<iframe id="inlineframe" name="HRM Direct Career Site iFrame"
+						  src="//lafamiliasf.hrmdirect.com/employment/job-openings.php?search=true&nohd=&dept=-1&office=-1"
+						  frameborder="0" allowtransparency="true">
+				</iframe>
+			</div>
+			<!-- END HRM DIRECT DYNAMIC CODE -->
+		<?php
+		}
+		?>
 		<!-- START OF ACF FOR APPOINTMENT PHONE NUMBERS -->
 
 		<?php
