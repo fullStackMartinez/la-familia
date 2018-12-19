@@ -134,6 +134,8 @@ function la_familia_scripts() {
 
 	wp_enqueue_style( 'la-familia-stylesheet', get_template_directory_uri() . '/css/main.css' );
 
+	wp_enqueue_style( 'la-familia-stylesheet', get_template_directory_uri() . '/styles/style_lafamilia.css' );
+
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
