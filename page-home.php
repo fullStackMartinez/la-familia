@@ -35,7 +35,7 @@
 					<p class="content-p"><?php echo get_post_field('post_content', $post->ID); ?></p>
 				</div>
 				<div class="quicklinks-box">
-					<h3 class="quicklinks-title">QUICKLINKS</h3>
+					<h3 class="quicklinks-title">QUINKS</h3>
 					<ul>
 						<?php
 						if(have_rows('content_info')):
