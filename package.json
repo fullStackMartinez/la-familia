@@ -1,0 +1,22 @@
+{
+  "name": "la-familia",
+  "version": "1.0.0",
+  "description": "La Familia website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o styles/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fullStackMartinez/la-familia.git"
+  },
+  "author": "Esteban Martinez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fullStackMartinez/la-familia/issues"
+  },
+  "homepage": "https://github.com/fullStackMartinez/la-familia#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
