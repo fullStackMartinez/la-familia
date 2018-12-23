@@ -122,6 +122,8 @@ add_action( 'widgets_init', 'la_familia_widgets_init' );
 function la_familia_scripts() {
 	wp_enqueue_style( 'la-familia-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'la-famlia-stylesheet', get_template_directory_uri() . '/css/home-slider.css' );
+	wp_enqueue_style( 'la-familia-stylesheet', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'la-familia-css', get_template_directory_uri() . '/styles/style_lafamilia.css' );
 
 	wp_enqueue_script( 'la-familia-home-slideshow', get_template_directory_uri() . '/js/home-slideshow.js', array(), '20151215', true );
 
@@ -132,9 +134,8 @@ function la_familia_scripts() {
 	wp_enqueue_script('jquery-slider', '//code.jquery.com/jquery-2.2.4.min.js');
 	wp_enqueue_script('sponsor-slider', get_stylesheet_directory_uri() . '/js/sponsor-slider.js', array('jquery-slider'));
 
-	wp_enqueue_style( 'la-familia-stylesheet', get_template_directory_uri() . '/css/main.css' );
 
-	wp_enqueue_style( 'la-familia-stylesheet', get_template_directory_uri() . '/styles/style_lafamilia.css' );
+
 
 	}
 

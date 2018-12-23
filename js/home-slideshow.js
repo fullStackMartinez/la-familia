@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 	/* HOMEPAGE SLIDESHOW */
-	var transitionDuration = 800;
-	var transitionInterval = 5000;
+	var transitionDuration = 8800;
+	var transitionInterval = 55000;
 
 	var thisIndex = 0;
 	var prevIndex = null;

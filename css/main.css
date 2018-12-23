@@ -3,11 +3,7 @@
 	margin: 0;
 }
 
-.wrapper {
-	max-width: 1020px;
-	padding: 0 10px;
-	margin: 0 auto;
-}
+
 img {
 	height: auto;
 	max-width: 100%;
@@ -35,29 +31,12 @@ img {
 }
 
 
-.footer-container {
-	display: flex;
-	justify-content: space-around;
-}
 
-ul {
-	list-style: none;
-}
 
-.field-loop {
-	padding: 40px 0;
-	border-bottom: 1px solid #ccc;
-	display: flex;
-}
 
-.loop-image {
-	overflow: auto;
-	padding: 0 40px 0 50px;
-}
 
-.loop-content {
-	flex: 2;
-}
+
+
 
 .locations {
 	display: flex;
